@@ -57,11 +57,14 @@ def generate_pwd(pwd_length):
     print(f'Your new password is: {pwd}')
 
 
-pwd_length = int(input(
-    'Please enter the length of the password you desire. Must be a number between 8 and 12.'
-))
+create_pwd = True
 
-if pwd_length >= 8 and pwd_length <= 12:
-    generate_pwd(pwd_length)
-else:
-    print('Please enter a number between 8 and 12.')
+while create_pwd == True:
+    pwd_length = int(input(
+        'Please enter the length of the password you desire. Must be a number between 8 and 12. '
+    ))
+    if pwd_length >= 8 and pwd_length <= 12:
+        generate_pwd(pwd_length)
+        create_pwd = False
+    else:
+        print('Error: Password length does not meet requirements.')
